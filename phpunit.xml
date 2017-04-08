@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="true"
+         stopOnError="true">
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory suffix=".php">./app</directory>
+        </whitelist>
+    </filter>
+    <listeners>
+        <listener class="Wubs\PHPUnitContinue\Listener">
+            <arguments>
+                <string>./phpunit-continue.json</string>
+                <object class="Wubs\PHPUnitContinue\Config"/>
+                <object class="PHPUnit\Util\Printer"/>
+            </arguments>
+        </listener>
+    </listeners>
+</phpunit>
